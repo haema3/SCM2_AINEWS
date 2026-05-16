@@ -13,9 +13,9 @@ const siteConfig = {
 const users = [
   {
     id: 0, // default author
-    username: "licat",
-    company: "weniv",
-    position: "CEO",
+    username: "admin",
+    company: "SCM2팀 AI NEWS",
+    position: "ADMIN",
     img: "img/user/profile-licat.png",
   },
 ];
