@@ -3,7 +3,7 @@
 const siteConfig = {
   username: "haema3", // GitHub 사용자 이름
   repositoryName: "SCM2_AINEWS", // GitHub 저장소 이름
-  mainColor: "#3498db", // 사이트의 주 색상
+  mainColor: "#ffa703", // 사이트의 주 색상
   textColor: "#333333", // 기본 텍스트 색상
   blogTitle: "SCM2팀 AI NEWS 공유", // 블로그 제목
 };
@@ -16,7 +16,7 @@ const users = [
     username: "admin",
     company: "SCM2팀 AI NEWS",
     position: "ADMIN",
-    img: "img/user/profile-licat.png",
+    img: "img/user/profile-allosa.png",
   },
 ];
 
