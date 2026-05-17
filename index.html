@@ -15,7 +15,15 @@
     <link rel="stylesheet" href="./library/highlight_ally-light.min.css" />
 
     <!-- custom css -->
-    <link rel="stylesheet" href=" style/style.css" />
+    <link rel="stylesheet" href="style/style.css" />
+
+    <!-- fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Wanted+Sans:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
 
     <!-- tailwind -->
     <script src="./library/tailwind-3.4.1.js"></script>
@@ -23,6 +31,9 @@
       tailwind.config = {
         theme: {
           extend: {
+            fontFamily: {
+              sans: ["'Wanted Sans'", "ui-sans-serif", "system-ui", "sans-serif"],
+            },
             colors: {
               primary: "#2e6ff2",
               background: "#fff",
