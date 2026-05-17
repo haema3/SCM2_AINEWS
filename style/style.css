@@ -6,10 +6,22 @@
   font-display: swap;
 }
 
-body, input, textarea, button {
-  font-family: 'ArittaDodum', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans KR", "Malgun Gothic", "Apple SD Gothic Neo", sans-serif;
+html,
+body {
+  font-family: 'ArittaDodum', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans KR", "Malgun Gothic", "Apple SD Gothic Neo", sans-serif !important;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+body *,
+body *::before,
+body *::after,
+input,
+textarea,
+button,
+select,
+option {
+  font-family: inherit !important;
 }
 
 #menu-button {
