@@ -1,15 +1,56 @@
 # Event
 
-* hello world
-* hello world
-* hello world
+## `26년 06월`
+- __[AWSKRUG 플랫폼엔지니어링 모임](https://www.meetup.com/awskrug/events/314830108/)__
+  - 분류: `오프라인(서울 강남구)`, `유료`, `모임`, `클라우드`
+  - 주최: AWSKRUG
+  - 접수: 05. 18(월) ~ 06. 01(월)
+- __[데이터야놀자 2026](https://event-us.kr/datayanolja2020/event/124270)__
+  - 분류: `오프라인(서울 강남구)`, `유료`, `세미나`, `데이터`, `AI`
+  - 주최: 데이터야놀자
+  - 접수: 05. 06(수) ~ 06. 02(화)
 
-법관이 중대한 심신상의 장해로 직무를 수행할 수 없을 때에는 법률이 정하는 바에 의하여 퇴직하게 할 수 있다. 타인의 범죄행위로 인하여 생명·신체에 대한 피해를 받은 국민은 법률이 정하는 바에 의하여 국가로부터 구조를 받을 수 있다.
-
-행정권은 대통령을 수반으로 하는 정부에 속한다. 국가의 세입·세출의 결산, 국가 및 법률이 정한 단체의 회계검사와 행정기관 및 공무원의 직무에 관한 감찰을 하기 위하여 대통령 소속하에 감사원을 둔다.
-
-| Header 1 | Header 2 | Header 3 |
-|----------|----------|----------|
-| Row 1 Col 1 | Row 1 Col 2 | Row 1 Col 3 |
-| Row 2 Col 1 | Row 2 Col 2 | Row 2 Col 3 |
-| Row 3 Col 1 | Row 3 Col 2 | Row 3 Col 3 |
+- __[2026년 차세대 ICT여성리더 육성 - 협업 프로젝트 지원 사업](http://www.kibwa.org/board/board_view?code=notice&no=1194)__
+  - 분류: `온라인`, `무료`, `대회`
+  - 주최: 과학기술정보통신부 / 정보통신산업진흥원 / 한국IT여성기업인협회
+  - 접수: 05. 16(토) ~ 06. 10(수)
+- __[STK 스마트테크 코리아](https://smarttechkorea.com/Main)__
+  - 분류: `오프라인(서울 코엑스)`, `무료`, `기술일반`
+  - 주최: STK 스마트테크 코리아
+  - 일시: 06. 10(수) ~ 06. 12(금)
+- __[2026 인공지능 & 빅데이터쇼](https://smarttechkorea.com/aibigdatashow)__
+  - 분류: `오프라인(서울 코엑스)`, `무료`, `AI`, `기술일반`
+  - 주최: 한국AI산업협회 / AI타임즈
+  - 일시: 06. 10(수) ~ 06. 12(금)
+- __[JB금융그룹 Fin:AI Challenge](https://daker.ai/public/hackathons/jb-fin-ai-challenge)__
+  - 분류: `온라인`, `무료`, `대회`, `AI`
+  - 주최: JB금융그룹 / 데이콘
+  - 접수: 05. 11(월) ~ 06. 12(금)
+- __[(Open UP) '26년도 오픈소스 컨트리뷰션 아카데미 [참여형] 멘티 모집(~6.14)](https://oss.kr/pages/10/4511?page=1&pageSize=10&searchKeyword=&searchType=)__
+  - 분류: `온라인`, `무료`, `대회`, `AI`
+  - 주최: 과학기술정보통신부
+  - 접수: 05. 12(화) ~ 06. 14(일) 23:59
+- __[DND 15기 모집](https://dnd.ac/)__
+  - 분류: `온/오프라인`, `무료`, `동아리`
+  - 주최: DND
+  - 접수: 06. 01(월) ~ 06. 14(일) 23:59
+- __[The Turing Test Hackathon 2026 — Phase 2. AI Awakening Hackathon](https://dorahacks.io/hackathon/mantleturingtesthackathon2026/detail)__
+  - 분류: `온라인`, `무료`, `대회`, `블록체인`, `AI`
+  - 주최: Mantle / Bybit / Byreal / BGA
+  - 접수: 05. 01(목) ~ 06. 15(월)
+- __[2026 AsiaSTA QA Conference](https://ticketa.co/event/smu6uxm5)__
+  - 분류: `오프라인(서울 강남구)`, `유료`, `세미나`, `기술일반`
+  - 주최: AsiaSTA
+  - 접수: 04. 24(목) ~ 06. 18(목)
+- __[NextRise 2026, Seoul](https://www.nextrise.co.kr/ko)__
+  - 분류: `오프라인(서울 코엑스)`, `무료`, `기술일반`
+  - 주최: 한국산업은행 / 한국무역협회 / 벤처기업협회 / 한국벤처캐피탈협회
+  - 일시: 06. 18(목) ~ 06. 19(금)
+- __[코드트리 청약 통장 챌린지 (무료 이용 이벤트)](https://www.codetree.ai/ko/no-free-lunch-2026)__
+  - 분류: `온라인`, `무료`, `대회`
+  - 주최: 코드트리
+  - 일시: 05. 06(수) ~ 06. 22(월)
+- __[Microsoft Build //localhost:Daegu](https://ticketa.co/event/yjp015vu)__
+  - 분류: `오프라인(대구)`, `무료`, `세미나`, `기술일반`
+  - 주최: Microsoft
+  - 접수: 05. 18(월) ~ 06. 23(화)
