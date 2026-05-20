@@ -68,14 +68,14 @@ async function renderMenu() {
 
     link.href = menu.download_url;
     // 확장자를 제외하고 이름만 innerText로 사용
-    const menuName = menu.name === "blog.md" ? "News" : menu.name.split(".")[0];
+    const menuName = menu.name.split(".")[0];
     link.innerText = menuName;
 
     link.onclick = (event) => {
       // 메뉴 링크 클릭 시 이벤트 중지 후 menu 내용을 읽어와 contents 영역에 렌더링
       event.preventDefault();
 
-      if (menu.name === "blog.md") {
+      if (menu.name === "news.md") {
         if (blogList.length === 0) {
           // 블로그 리스트 로딩
           initDataBlogList().then(() => {
