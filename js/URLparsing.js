@@ -74,7 +74,7 @@ window.addEventListener("popstate", (event) => {
   // 뒤로간 url을 가져옴
   let url = new URL(window.location.href);
 
-  if (!url.search.split("=")[1] || url.search.split("=")[1] === "blog.md") {
+  if (!url.search.split("=")[1] || url.search.split("=")[1] === "news.md") {
     // 블로그 리스트 로딩
     renderBlogList();
   } else if (url.search.split("=")[0] === "?menu") {
