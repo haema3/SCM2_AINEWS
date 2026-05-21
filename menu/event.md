@@ -76,14 +76,6 @@
 - **일시**: 06. 18(목) ~ 06. 19(금)
 
 
-
-#### [코드트리 청약 통장 챌린지 (무료 이용 이벤트)](https://www.codetree.ai/ko/no-free-lunch-2026)
-- **분류**: `온라인` `무료` `대회`
-- **주최**: 코드트리
-- **일시**: 05. 06(수) ~ 06. 22(월)
-
-
-
 #### [Microsoft Build //localhost:Daegu](https://ticketa.co/event/yjp015vu)
 - **분류**: `오프라인(대구)` `무료` `세미나` `기술일반`
 - **주최**: Microsoft
