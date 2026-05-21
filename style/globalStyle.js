@@ -23,7 +23,24 @@ const postliStyle = `pl-4 mb-2 leading-relaxed tracking-wide text-justify`;
 const postblockquoteStyle = `border-l-4 border-primary pl-4`;
 const postpreStyle = `relative bg-graylv1 p-4 rounded-[10px] mb-6 text-base font-medium overflow-auto whitespace-pre-wrap break-words text-justify max-w-full h-auto align-middle`;
 const postcodeStyle = `font-mono text-base bg-transparent`;
-const menutagStyle = `inline-flex items-center rounded-full bg-activation text-primary text-sm font-medium px-3 py-1 leading-none border border-blue-100 align-middle`;
+const menutagBaseStyle = `inline-flex items-center rounded-full text-sm font-medium px-3 py-1 leading-none border align-middle`;
+const menutagVariantStyleMap = {
+	default: `bg-activation text-primary border-blue-100`,
+	"온라인": `bg-emerald-50 text-emerald-700 border-emerald-200`,
+	"오프라인": `bg-sky-50 text-sky-700 border-sky-200`,
+	"온/오프라인": `bg-cyan-50 text-cyan-700 border-cyan-200`,
+	"무료": `bg-lime-50 text-lime-700 border-lime-200`,
+	"유료": `bg-rose-50 text-rose-700 border-rose-200`,
+	"모임": `bg-violet-50 text-violet-700 border-violet-200`,
+	"세미나": `bg-indigo-50 text-indigo-700 border-indigo-200`,
+	"대회": `bg-amber-50 text-amber-700 border-amber-200`,
+	"동아리": `bg-fuchsia-50 text-fuchsia-700 border-fuchsia-200`,
+	"클라우드": `bg-blue-50 text-blue-700 border-blue-200`,
+	"데이터": `bg-teal-50 text-teal-700 border-teal-200`,
+	"AI": `bg-purple-50 text-purple-700 border-purple-200`,
+	"기술일반": `bg-slate-100 text-slate-700 border-slate-200`,
+	"블록체인": `bg-orange-50 text-orange-700 border-orange-200`,
+};
 
 const posttableStyle = `table-auto w-auto border-collapse mb-6 h-auto align-middle border-graylv2 text-left`;
 const posttheadStyle = `text-left`;

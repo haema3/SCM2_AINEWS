@@ -78,6 +78,21 @@ function styleMarkdown(kinds, text, title_info = null) {
     // pre 요소 안에 버튼 삽입
     pre.appendChild(copyButton);
   });
+  const resolveMenuTagVariantStyle = (tagText) => {
+    const cleanedText = tagText.trim();
+    if (menutagVariantStyleMap[cleanedText]) {
+      return menutagVariantStyleMap[cleanedText];
+    }
+
+    // "오프라인(서울 강남구)"처럼 세부 정보가 붙은 분류는 접두 분류를 사용
+    const prefixTag = cleanedText.split("(")[0].trim();
+    if (menutagVariantStyleMap[prefixTag]) {
+      return menutagVariantStyleMap[prefixTag];
+    }
+
+    return menutagVariantStyleMap.default;
+  };
+
   tempDiv.querySelectorAll("code").forEach((code) => {
     if (code.closest("pre")) {
       code.classList.add(...postcodeStyle.split(" "));
@@ -85,7 +100,10 @@ function styleMarkdown(kinds, text, title_info = null) {
     }
 
     if (kinds === "menu") {
-      code.classList.add(...menutagStyle.split(" "));
+      code.classList.add(...menutagBaseStyle.split(" "));
+      code.classList.add(
+        ...resolveMenuTagVariantStyle(code.textContent || "").split(" ")
+      );
     } else {
       code.classList.add(...postcodeStyle.split(" "));
     }
