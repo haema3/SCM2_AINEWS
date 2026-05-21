@@ -23,6 +23,7 @@ const postliStyle = `pl-4 mb-2 leading-relaxed tracking-wide text-justify`;
 const postblockquoteStyle = `border-l-4 border-primary pl-4`;
 const postpreStyle = `relative bg-graylv1 p-4 rounded-[10px] mb-6 text-base font-medium overflow-auto whitespace-pre-wrap break-words text-justify max-w-full h-auto align-middle`;
 const postcodeStyle = `font-mono text-base bg-transparent`;
+const menutagStyle = `inline-flex items-center rounded-full bg-activation text-primary text-sm font-medium px-3 py-1 leading-none border border-blue-100 align-middle`;
 
 const posttableStyle = `table-auto w-auto border-collapse mb-6 h-auto align-middle border-graylv2 text-left`;
 const posttheadStyle = `text-left`;

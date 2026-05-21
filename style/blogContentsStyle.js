@@ -78,9 +78,18 @@ function styleMarkdown(kinds, text, title_info = null) {
     // pre 요소 안에 버튼 삽입
     pre.appendChild(copyButton);
   });
-  tempDiv
-    .querySelectorAll("code")
-    .forEach((code) => code.classList.add(...postcodeStyle.split(" ")));
+  tempDiv.querySelectorAll("code").forEach((code) => {
+    if (code.closest("pre")) {
+      code.classList.add(...postcodeStyle.split(" "));
+      return;
+    }
+
+    if (kinds === "menu") {
+      code.classList.add(...menutagStyle.split(" "));
+    } else {
+      code.classList.add(...postcodeStyle.split(" "));
+    }
+  });
 
   tempDiv
     .querySelectorAll("table")
