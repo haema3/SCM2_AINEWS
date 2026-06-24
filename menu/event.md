@@ -6,7 +6,7 @@
 #### [AI팩토리 역량 강화 세미나 2026](https://xai.kaist.ac.kr/AI-Factory-Capability-Seminar/2026/)
   - **분류**: `오프라인(서울 강남구)`, `무료`, `세미나`, `AI`
   - **주최**: 제조AI 솔루션 개발 지원센터 (KETI·KAIST)
-  - 일시: 07. 02(목)
+  - **일시**: 07. 02(목)
 
 #### [기상·기후 AI 해커톤 경진대회 2026](https://weatherhackathon.kr/)
   - **분류**: `온라인`, `오프라인(충남 천안)`, `무료`, `대회`, `AI`
@@ -66,7 +66,7 @@
 #### [AXIS 2026 (Asia eXperience & Innovation Summit)](https://www.rocketpunch.com/event/T42oNQmVqq)
   - **분류**: `오프라인`, `무료`, `세미나`, `AI`
   - **주최**: 한국능률협회컨설팅
-  - 일시: 07. 14(화) ~ 07. 16(목)
+  - **일시**: 07. 14(화) ~ 07. 16(목)
 
 
 
