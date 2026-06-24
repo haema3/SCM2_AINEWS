@@ -38,11 +38,6 @@
   - **주최**: AWSKRUG
   - **접수**: 06. 18(목) ~ 07. 10(금) 19:00
 
-#### [구름 AI 캠퍼스 Prism](https://aicampus.goorm.io/)
-  - **분류**: `온라인`, `오프라인(서울 강남구)`, `무료`, `AI`
-  - **주최**: 구름
-  - **접수**: 06. 16(화) ~ 07. 14(화)
-
 #### [Hugging Face Seoul Meetup](https://luma.com/xej0o2jr)
   - **분류**: `오프라인`, `무료`, `오픈소스`, `AI`
   - **주최**: Hugging Face KREW
