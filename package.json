@@ -1,0 +1,13 @@
+{
+  "name": "paper-trail",
+  "private": true,
+  "version": "1.0.0",
+  "description": "Node.js 기반 GitHub Pages 정적 블로그",
+  "scripts": {
+    "build": "node scripts/build.mjs",
+    "dev": "node scripts/serve.mjs"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}
