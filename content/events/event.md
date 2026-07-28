@@ -2,6 +2,63 @@
 
 > AI/데이터/개발 커뮤니티 행사를 한눈에 볼 수 있도록 정리했습니다.
 
+## 26년 08월
+#### [2026 AI SPARK in Yonsei](https://www.rocketpunch.com/event/wzOlIQ62n1)
+  - **분류**: `오프라인(서울 강남구)`, `무료`, `모임`, `AI`
+  - **주최**: CREAI+IT
+  - **일시**: 08. 01(토)
+
+#### [AWSKRUG 집현전 #jiphyeonjeon 온라인 소모임 - 8월 1일(토)](https://www.meetup.com/awskrug/events/315828955/)
+  - **분류**: `온라인`, `무료`, `모임`, `클라우드`
+  - **주최**: AWSKRUG
+  - **접수**: 07. 28(화) ~ 08. 01(토) 10:00
+
+#### [지그재그 세미나 5회 - 온톨로지로 만나는 휴먼 네트워킹](https://event-us.kr/zigzag/event/129917)
+  - **분류**: `오프라인(서울 성동구)`, `유료`, `세미나`, `AI`
+  - **주최**: 지그재그
+  - **접수**: 07. 06(월) ~ 08. 07(금) 23:00
+
+#### [멀티 에이전트 워크샵 with GitHub Copilot](https://ticketa.co/event/c99wxzdg)
+  - **분류**: `오프라인(서울 종로구)`, `유료`, `세미나`, `AI`, `클라우드`
+  - **주최**: Microsoft 커뮤니티 이벤트
+  - **접수**: 07. 17(금) ~ 08. 14(금) 10:00
+
+#### [자율주행모빌리티산업전(AME) 2026 컨퍼런스](https://am-expo.co.kr/sub-5-1)
+  - **분류**: `오프라인(서울 강남구)`, `유료`, `세미나`, `AI`
+  - **주최**: 코엑스(COEX)
+  - **접수**: 06. 22(월) ~ 08. 14(금)
+
+#### [KotlinConf Extended South Korea](https://ticketa.co/event/ic97nj1c)
+  - **분류**: `오프라인(서울 서대문구)`, `유료`, `세미나`, `기술일반`
+  - **주최**: Kotlin User Groups Seoul
+  - **접수**: 07. 26(일) ~ 08. 15(토) 22:00
+
+#### [PyCon Korea 2026](https://2026.pycon.kr)
+  - **분류**: `오프라인`, `유료`, `기술일반`
+  - **주최**: 파이콘 코리아
+  - **접수**: 08. 15(토) ~ 08. 17(월)
+
+#### [AI Summit Seoul & Expo 2026](https://www.aisummit.co.kr/)
+  - **분류**: `오프라인(서울 강남구)`, `유료`, `세미나`, `AI`
+  - **주최**: AI Summit
+  - **일시**: 08. 19(수) ~ 08. 21(금)
+
+#### [GDG Busan Google I/O Extended 2026 - Builder & Maker Networking](https://ticketa.co/event/qenoc6he)
+  - **분류**: `오프라인(부산)`, `유료`, `세미나`, `기술일반`
+  - **주최**: GDG Busan
+  - **접수**: 07. 09(목) ~ 08. 22(토) 14:00
+
+#### [Snowflake World Tour 2026 – 서울](https://www.snowflake.com/ko/world-tour/seoul/)
+  - **분류**: `오프라인(서울 강남구)`, `무료`, `세미나`, `AI`, `클라우드`
+  - **주최**: Snowflake
+  - **접수**: 07. 22(수) ~ 08. 27(목) 08:00
+
+#### [UbuCon Korea X MiniDebConf Korea 2026](https://2026.ubuntu-kr.org/ko/)
+  - **분류**: `오프라인(서울 강남구)`, `유료`, `세미나`, `기술일반`
+  - **주최**: Ubuntu Korea Community / Debian Korea
+  - **일시**: 08. 29(토)
+
+
 ## 26년 07월
 #### [AI팩토리 역량 강화 세미나 2026](https://xai.kaist.ac.kr/AI-Factory-Capability-Seminar/2026/)
   - **분류**: `오프라인(서울 강남구)`, `무료`, `세미나`, `AI`
