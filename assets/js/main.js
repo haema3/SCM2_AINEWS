@@ -5,9 +5,28 @@
     menuButton.addEventListener('click', () => {
       const isOpen = nav.classList.toggle('is-open');
       menuButton.setAttribute('aria-expanded', String(isOpen));
-      menuButton.textContent = isOpen ? '닫기' : '메뉴';
+      const label = menuButton.querySelector('.sr-only');
+      if (label) label.textContent = isOpen ? '메뉴 닫기' : '메뉴';
     });
   }
+
+  // Material 3 top app bar: elevate once the page starts scrolling.
+  const appBar = document.querySelector('.gnb');
+  if (appBar) {
+    const syncAppBar = () => appBar.classList.toggle('is-scrolled', window.scrollY > 4);
+    syncAppBar();
+    window.addEventListener('scroll', syncAppBar, { passive: true });
+  }
+
+  const path = window.location.pathname;
+  const section = path.includes('/categories') ? 'archive'
+    : path.includes('/tags') ? 'topics'
+      : path.includes('/events') ? 'events'
+        : path.includes('/about') ? 'about'
+          : 'news';
+  document.querySelectorAll('[data-nav]').forEach((link) => {
+    if (link.dataset.nav === section) link.setAttribute('aria-current', 'page');
+  });
 
   document.querySelectorAll('[data-copy-link]').forEach((button) => {
     button.addEventListener('click', async () => {
@@ -75,7 +94,7 @@
   searchInput?.addEventListener('focus', loadSearchIndex);
   searchInput?.addEventListener('input', async (event) => { await loadSearchIndex(); renderSearchResults(event.target.value); });
   document.addEventListener('click', (event) => {
-    if (!event.target.closest('.header-search')) searchResults?.replaceChildren();
+    if (!event.target.closest('.gnb-search')) searchResults?.replaceChildren();
   });
 
   document.querySelectorAll('[data-current-year]').forEach((node) => {
