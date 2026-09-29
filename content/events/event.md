@@ -1,6 +1,53 @@
 # AI 관련 행사 정보
 
 > AI/데이터/개발 커뮤니티 행사를 한눈에 볼 수 있도록 정리했습니다.
+## 26년 10월
+
+#### [2026 KoMaP AI 경진대회](https://komap.ai/front/competition2026)
+  - **주최**: 산업통상부 / 한국산업기술진흥원 (주관: 한국전자통신연구원, 한국재료연구원)
+  - **접수**: 09/03(목) ~ 10/15(목) 24:00
+  - **분류**: `온라인`
+
+#### [제14회 빅콘테스트 (2026 데이터+AI 혁신 챌린지 통합경진대회)](https://www.bigcontest.or.kr/)
+  - **주최**: 과학기술정보통신부 / 한국데이터산업진흥원
+  - **접수**: 09/08(화) ~ 10/26(월) (결과물 제출마감)
+  - **분류**: `온라인`
+
+#### [N.O.V.A. 2026 | 대화형 의료 진단 AI 에이전트 대회](https://nova.snubhai.org/)
+  - **주최**: 분당서울대학교병원 의료인공지능센터 / 엘리스(elice)
+  - **접수**: 09/13(토) ~ 10/03(토)
+  - **분류**: `온라인`
+
+#### [공공 웹사이트 불법광고 탐지 도구 개발 공모전](https://www.mois.go.kr/frt/bbs/type013/commonSelectBoardArticle.do?bbsId=BBSMSTR_000000000006&nttId=129458)
+  - **주최**: 행정안전부 / 한국지능정보사회진흥원(NIA)
+  - **접수**: 09/14(월) 09:00 ~ 10/23(금) 18:00
+  - **분류**: `온라인`
+
+#### [OpenSearch Project - Seoul Meetup](https://www.meetup.com/opensearch-project-seoul/events/316379129/)
+  - **주최**: OpenSearch Project - Seoul
+  - **일시**: 10/13(화) 19:30 ~ 21:00
+  - **분류**: `오프라인(서울)`
+
+#### [AI Acceleration Day](https://event-us.kr/azwellai/event/135306)
+  - **주최**: 아즈웰AI
+  - **일시**: 10/22(목) 15:00 ~ 19:00
+  - **분류**: `오프라인(서울)`
+
+#### [GitHub Copilot Dev Days | Seoul](https://ticketa.co/event/xzch6c1g)
+  - **주최**: 한국마이크로소프트
+  - **일시**: 10/24(토) 12:00 ~ 18:00
+  - **분류**: `오프라인(서울)`
+
+#### [FEConf 2026](https://2026.feconf.kr/)
+  - **주최**: 프론트엔드개발그룹(FEDG)
+  - **일시**: 10/24(토) 10:00 ~
+  - **분류**: `오프라인(서울)`
+
+#### [우아콘 2026 (WOOWACON 2026)](https://woowacon.com/)
+  - **주최**: (주)우아한형제들
+  - **일시**: 10/28(수)
+  - **분류**: `오프라인(서울)`
+
 
 ## 26년 09월
 #### [re:Build your Data 차세대 Data Platform 운영 전략 세미나](https://event-us.kr/gsneotek/event/132338)
