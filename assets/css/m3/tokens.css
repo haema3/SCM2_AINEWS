@@ -1,75 +1,67 @@
-/*!
- * Material Design 3 tokens for SCM2 AI News.
- *   Color roles .... Material 3 baseline light scheme (seed #6750A4)
- *   Type scale ..... M3 type scale (Roboto + Noto Sans KR)
- *   Shape .......... M3 corner scale
- *   Elevation ...... M3 levels 0-5
- *   State layers ... M3 hover / focus / pressed opacities
- * Reference: https://m3.material.io/
- */
+/* Shared design tokens for the SCM2 AI News editorial theme. */
 
 :root {
   color-scheme: light;
 
   /* ── Reference: typefaces ───────────────────────────────────────── */
-  --md-ref-typeface-brand: Roboto, "Noto Sans KR", -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo", system-ui, sans-serif;
-  --md-ref-typeface-plain: Roboto, "Noto Sans KR", -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo", "Malgun Gothic", system-ui, sans-serif;
+  --md-ref-typeface-brand: Pretendard, -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo", "Noto Sans KR", "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --md-ref-typeface-plain: Pretendard, -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo", "Noto Sans KR", "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
   --md-ref-typeface-mono: ui-monospace, "SFMono-Regular", "SF Mono", Menlo, Consolas, "Liberation Mono", monospace;
 
   /* ── System: color roles (light) ────────────────────────────────── */
-  --md-sys-color-primary: #6750A4;
+  --md-sys-color-primary: #2F855A;
   --md-sys-color-on-primary: #FFFFFF;
-  --md-sys-color-primary-container: #EADDFF;
-  --md-sys-color-on-primary-container: #21005D;
+  --md-sys-color-primary-container: #E8F4EC;
+  --md-sys-color-on-primary-container: #173F2A;
 
-  --md-sys-color-secondary: #625B71;
+  --md-sys-color-secondary: #43634D;
   --md-sys-color-on-secondary: #FFFFFF;
-  --md-sys-color-secondary-container: #E8DEF8;
-  --md-sys-color-on-secondary-container: #1D192B;
+  --md-sys-color-secondary-container: #EDF6EF;
+  --md-sys-color-on-secondary-container: #224B33;
 
-  --md-sys-color-tertiary: #7D5260;
+  --md-sys-color-tertiary: #315B70;
   --md-sys-color-on-tertiary: #FFFFFF;
-  --md-sys-color-tertiary-container: #FFD8E4;
-  --md-sys-color-on-tertiary-container: #31111D;
+  --md-sys-color-tertiary-container: #EAF3F7;
+  --md-sys-color-on-tertiary-container: #173B4B;
 
   --md-sys-color-error: #B3261E;
   --md-sys-color-on-error: #FFFFFF;
   --md-sys-color-error-container: #F9DEDC;
   --md-sys-color-on-error-container: #410E0B;
 
-  --md-sys-color-surface: #FEF7FF;
-  --md-sys-color-on-surface: #1D1B20;
-  --md-sys-color-surface-variant: #E7E0EC;
-  --md-sys-color-on-surface-variant: #49454F;
+  --md-sys-color-surface: #FFFFFF;
+  --md-sys-color-on-surface: #1F2328;
+  --md-sys-color-surface-variant: #F6F8FA;
+  --md-sys-color-on-surface-variant: #656D76;
 
-  --md-sys-color-surface-dim: #DED8E1;
-  --md-sys-color-surface-bright: #FEF7FF;
+  --md-sys-color-surface-dim: #EFF2F4;
+  --md-sys-color-surface-bright: #FFFFFF;
   --md-sys-color-surface-container-lowest: #FFFFFF;
-  --md-sys-color-surface-container-low: #F7F2FA;
-  --md-sys-color-surface-container: #F3EDF7;
-  --md-sys-color-surface-container-high: #ECE6F0;
-  --md-sys-color-surface-container-highest: #E6E0E9;
+  --md-sys-color-surface-container-low: #FFFFFF;
+  --md-sys-color-surface-container: #FFFFFF;
+  --md-sys-color-surface-container-high: #F6F8FA;
+  --md-sys-color-surface-container-highest: #EFF2F5;
 
-  --md-sys-color-outline: #79747E;
-  --md-sys-color-outline-variant: #CAC4D0;
+  --md-sys-color-outline: #D1D9E0;
+  --md-sys-color-outline-variant: #E6E8EB;
 
-  --md-sys-color-inverse-surface: #322F35;
-  --md-sys-color-inverse-on-surface: #F5EFF7;
-  --md-sys-color-inverse-primary: #D0BCFF;
+  --md-sys-color-inverse-surface: #1F2328;
+  --md-sys-color-inverse-on-surface: #F6F8FA;
+  --md-sys-color-inverse-primary: #BDE2CA;
 
-  --md-sys-color-surface-tint: #6750A4;
+  --md-sys-color-surface-tint: #2F855A;
   --md-sys-color-scrim: #000000;
   --md-sys-color-shadow: #000000;
 
   /* Fixed accent pairs used by article covers */
-  --md-sys-color-primary-fixed: #EADDFF;
-  --md-sys-color-primary-fixed-dim: #D0BCFF;
-  --md-sys-color-secondary-fixed: #E8DEF8;
-  --md-sys-color-tertiary-fixed: #FFD8E4;
+  --md-sys-color-primary-fixed: #E8F4EC;
+  --md-sys-color-primary-fixed-dim: #D9ECE0;
+  --md-sys-color-secondary-fixed: #EDF6EF;
+  --md-sys-color-tertiary-fixed: #EAF3F7;
 
   /* ── System: type scale ─────────────────────────────────────────── */
   /* Complete `font` shorthands: [weight] [size]/[line-height] [family]. */
-  /* Letter-spacing is left at 0 for Korean legibility (M3 ko guidance). */
+  /* Keep letter spacing neutral for Korean legibility. */
   --md-type-display-large: 400 57px/64px var(--md-ref-typeface-brand);
   --md-type-display-medium: 400 45px/52px var(--md-ref-typeface-brand);
   --md-type-display-small: 400 36px/44px var(--md-ref-typeface-brand);
@@ -96,16 +88,16 @@
   --md-sys-shape-small: 8px;
   --md-sys-shape-medium: 12px;
   --md-sys-shape-large: 16px;
-  --md-sys-shape-extra-large: 28px;
+  --md-sys-shape-extra-large: 20px;
   --md-sys-shape-full: 9999px;
 
   /* ── System: elevation levels 0-5 ───────────────────────────────── */
   --md-sys-elevation-0: none;
-  --md-sys-elevation-1: 0 1px 2px 0 rgba(0, 0, 0, 0.30), 0 1px 3px 1px rgba(0, 0, 0, 0.15);
-  --md-sys-elevation-2: 0 1px 2px 0 rgba(0, 0, 0, 0.30), 0 2px 6px 2px rgba(0, 0, 0, 0.15);
-  --md-sys-elevation-3: 0 1px 3px 0 rgba(0, 0, 0, 0.30), 0 4px 8px 3px rgba(0, 0, 0, 0.15);
-  --md-sys-elevation-4: 0 2px 3px 0 rgba(0, 0, 0, 0.30), 0 6px 10px 4px rgba(0, 0, 0, 0.15);
-  --md-sys-elevation-5: 0 4px 4px 0 rgba(0, 0, 0, 0.30), 0 8px 12px 6px rgba(0, 0, 0, 0.15);
+  --md-sys-elevation-1: 0 1px 3px rgba(31, 35, 40, 0.04);
+  --md-sys-elevation-2: 0 8px 24px rgba(31, 35, 40, 0.08);
+  --md-sys-elevation-3: 0 12px 32px rgba(31, 35, 40, 0.12);
+  --md-sys-elevation-4: 0 16px 40px rgba(31, 35, 40, 0.14);
+  --md-sys-elevation-5: 0 20px 48px rgba(31, 35, 40, 0.18);
 
   /* ── System: state layer opacities ──────────────────────────────── */
   --md-sys-state-hover-opacity: 0.08;
@@ -123,7 +115,7 @@
   /* ── System: layout grid ────────────────────────────────────────── */
   --md-sys-layout-margin: 24px;
   --md-sys-layout-max-width: 1200px;
-  --md-sys-layout-top-app-bar: 64px;
+  --md-sys-layout-top-app-bar: 76px;
   --md-sys-layout-aside: 300px;
 
   /* Spacing (8dp base grid) */

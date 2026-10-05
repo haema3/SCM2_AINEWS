@@ -113,16 +113,16 @@ function markdownToHtml(source) {
 // Material 3 recommends Roboto for Latin; Noto Sans KR covers Hangul.
 const fontLinks = '<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&family=Roboto:wght@400;500;700&display=swap">';
 const searchIcon = '<svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="11" cy="11" r="6.25" stroke="currentColor" stroke-width="1.8"/><path d="M16 16.5 20 20.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>';
+const monthIcon = '<svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="3.75" y="5.25" width="16.5" height="15.5" rx="2" stroke="currentColor" stroke-width="1.5"/><path d="M7.5 3.75v3.5M16.5 3.75v3.5M4 9.25h16" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><path d="M7.25 12.5h3v3h-3zM13.75 12.5h3v3h-3z" fill="currentColor"/></svg>';
 
-// Article covers use M3 container roles (background tone + matching on-color).
 function coverFill(post) {
   const palette = [
-    { bg: '#EADDFF', on: '#21005D' }, // primary-container
-    { bg: '#E8DEF8', on: '#1D192B' }, // secondary-container
-    { bg: '#FFD8E4', on: '#31111D' }, // tertiary-container
-    { bg: '#F6EDFF', on: '#21005D' }, // primary · tone 95
-    { bg: '#FFECF1', on: '#31111D' }, // tertiary · tone 95
-    { bg: '#ECE6F0', on: '#1D1B20' }, // surface-container-high
+    { bg: '#E8F4EC', on: '#245A39' },
+    { bg: '#EDF6EF', on: '#285D3D' },
+    { bg: '#F1F7F2', on: '#315F43' },
+    { bg: '#EAF2ED', on: '#2B5940' },
+    { bg: '#F4F7F5', on: '#3D5948' },
+    { bg: '#EEF2EF', on: '#354B3C' },
   ];
   const month = Number(String(post.date).slice(5, 7)) || 1;
   return palette[month % palette.length];
@@ -133,16 +133,46 @@ function monthParts(date) {
   return { year: String(value.getFullYear()), month: String(value.getMonth() + 1).padStart(2, '0') };
 }
 
-function newsCard(post, featured = false, anchor = false) {
+function newsCard(post) {
   const parts = monthParts(post.date);
   const cover = coverFill(post);
-  const id = anchor ? ` id="month-${parts.year}-${parts.month}"` : '';
-  return `<article class="news-card${featured ? ' news-card--featured' : ''}"${id}><a href="${url(post.permalink)}"><div class="news-card-cover" style="--cover:${cover.bg};--on-cover:${cover.on}" aria-hidden="true"><span>${escapeHtml(post.category)}</span><strong>${parts.month}</strong><em>${parts.year}</em></div><div class="news-card-body"><p class="news-card-meta"><b>${escapeHtml(post.category)}</b><span>${formatDate(post.date)}</span></p><h3>${escapeHtml(post.title)}</h3><p class="news-card-desc">${escapeHtml(post.description)}</p><div class="news-card-foot"><span>${post.reading_time ?? 4}분 읽기</span><span class="news-card-cta">읽어보기</span></div></div></a></article>`;
+  return `<article class="news-card"><a href="${url(post.permalink)}"><div class="news-card-cover" style="--cover:${cover.bg};--on-cover:${cover.on}" aria-hidden="true"><span>${escapeHtml(post.category)}</span><strong>${parts.month}</strong><em>${parts.year}</em></div><div class="news-card-body"><p class="news-card-meta"><b>${escapeHtml(post.category)}</b><span>${formatDate(post.date)}</span></p><h3>${escapeHtml(post.title)}</h3><p class="news-card-desc">${escapeHtml(post.description)}</p><div class="news-card-foot"><span>${post.reading_time ?? 4}분 읽기</span><span class="news-card-cta">읽어보기</span></div></div></a></article>`;
+}
+
+function featuredCard(post) {
+  const parts = monthParts(post.date);
+  const tags = (post.tags ?? []).slice(0, 2).map((tag) => `<a class="featured-tag" href="${url(`/tags/${slugify(tag)}/`)}">${escapeHtml(tag)}</a>`).join('');
+  const separator = post.description.indexOf(',');
+  const headline = separator < 0 ? post.description : post.description.slice(0, separator).trim();
+  const summary = separator < 0 ? '' : post.description.slice(separator + 1).trim();
+  return `<article class="featured" id="month-${parts.year}-${parts.month}"><div class="featured-copy"><p class="featured-kicker">✦ Featured Brief</p><h1>${escapeHtml(headline)}</h1>${summary ? `<p class="featured-description">${escapeHtml(summary)}</p>` : ''}<div class="featured-meta"><span class="meta-item"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="3.75" y="5.5" width="16.5" height="15" rx="2" stroke="currentColor" stroke-width="1.6"/><path d="M7.5 3.75v3.5M16.5 3.75v3.5M4 9.5h16" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg><time datetime="${escapeHtml(post.date.slice(0, 10))}">${formatDate(post.date)}</time></span><span class="meta-item"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="8.25" stroke="currentColor" stroke-width="1.6"/><path d="M12 7.5v5l3.25 2" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>${post.reading_time ?? 4}분 읽기</span><span class="featured-category">${escapeHtml(post.category)}</span>${tags}</div><a class="featured-link" href="${url(post.permalink)}">전체 브리프 읽기 <span aria-hidden="true">→</span></a></div><a class="featured-art" href="${url(post.permalink)}" aria-label="${escapeHtml(post.title)} 브리프 읽기"><span class="featured-art-kicker">SCM2 AI NEWS <i>·</i> MONTHLY BRIEF</span><span class="featured-art-main"><strong>AI</strong><span>NEWS<br>BRIEF</span></span><span class="featured-art-footer"><strong>${parts.month}</strong><span>${parts.year} <i>／</i> MONTHLY REPORT</span></span></a></article>`;
 }
 
 function layout({ title, description, body: rawBody, type = 'website', robots = '' }) {
   const body = rawBody;
-  return `<!doctype html><html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="theme-color" content="#FEF7FF"><meta name="site-base" content="${basePath}"><meta name="description" content="${escapeHtml(description ?? siteDescription)}"><meta property="og:title" content="${escapeHtml(title)}"><meta property="og:description" content="${escapeHtml(description ?? siteDescription)}"><meta property="og:type" content="${type}">${robots ? `<meta name="robots" content="${robots}">` : ''}<title>${escapeHtml(title)} — ${siteTitle}</title><link rel="icon" href="${url('/assets/favicon.svg')}" type="image/svg+xml">${fontLinks}<link rel="stylesheet" href="${url('/assets/css/m3/tokens.css')}"><link rel="stylesheet" href="${url('/assets/css/styles.css')}"><script src="${url('/assets/js/main.js')}" defer></script></head><body><a class="skip-link" href="#main-content">본문으로 건너뛰기</a><header class="gnb"><div class="shell gnb-inner"><a class="brand" href="${url('/')}" aria-label="${siteTitle} 홈"><span class="brand-mark" aria-hidden="true">AI</span><span class="brand-name"><strong>SCM2 AI News</strong><small>월간 브리프</small></span></a><div class="gnb-tools" id="site-nav" data-site-nav><nav class="site-nav" aria-label="주요 메뉴"><a data-nav="news" href="${url('/')}">뉴스</a><a data-nav="events" href="${url('/events/')}">이벤트</a></nav><div class="gnb-search"><label class="sr-only" for="search-input">뉴스 검색</label>${searchIcon}<input id="search-input" data-search-input type="search" placeholder="뉴스, 주제 검색" autocomplete="off" aria-controls="search-results"><div id="search-results" class="gnb-search-results" data-search-results aria-live="polite"></div></div></div><button class="menu-button" data-menu-button type="button" aria-expanded="false" aria-controls="site-nav"><span class="menu-icon" aria-hidden="true"></span><span class="sr-only">메뉴</span></button></div></header>${body}<footer class="app-footer"><div class="shell app-footer-inner"><div class="app-footer-brand"><strong>${siteTitle}</strong><p>모델·연구·정책·산업의 변화를 한 달 단위로 모아, 맥락과 출처가 있는 브리프로 전합니다.</p></div><nav class="app-footer-nav" aria-label="푸터 바로가기"><a href="${url('/')}">뉴스</a><a href="${url('/categories/')}">아카이브</a><a href="${url('/events/')}">이벤트</a><a href="${url('/about/')}">소개</a><a href="${url('/feed.xml')}">RSS</a></nav></div><div class="shell app-footer-meta"><p>© <span data-current-year>2026</span> ${siteTitle}</p><p>UI 구성은 <a href="https://m3.material.io/">Material Design 3</a> 디자인 가이드를 참고했습니다.</p></div></footer></body></html>`;
+  return `<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="theme-color" content="#FFFFFF"><meta name="site-base" content="${basePath}"><meta name="description" content="${escapeHtml(description ?? siteDescription)}"><meta property="og:title" content="${escapeHtml(title)}"><meta property="og:description" content="${escapeHtml(description ?? siteDescription)}"><meta property="og:type" content="${type}">${robots ? `<meta name="robots" content="${robots}">` : ''}
+<title>${escapeHtml(title)} — ${siteTitle}</title>
+<link rel="icon" href="${url('/assets/brand-mark.png')}" type="image/png">${fontLinks}
+<link rel="stylesheet" href="${url('/assets/css/m3/tokens.css')}"><link rel="stylesheet" href="${url('/assets/css/styles.css')}"><script src="${url('/assets/js/main.js')}" defer></script>
+</head>
+<body>
+<a class="skip-link" href="#main-content">본문으로 건너뛰기</a>
+<header class="gnb"><div class="shell gnb-inner">
+<a class="brand" href="${url('/')}" aria-label="${siteTitle} 홈"><span class="brand-mark" aria-hidden="true"><img src="${url('/assets/brand-mark.png')}" alt="" width="48" height="48"></span><span class="brand-name"><strong>SCM2 AI News</strong><small>월간 브리프</small></span></a>
+<div class="gnb-tools" id="site-nav" data-site-nav><nav class="site-nav" aria-label="주요 메뉴"><a data-nav="news" href="${url('/')}">뉴스</a><a data-nav="events" href="${url('/events/')}">이벤트</a></nav>
+<div class="gnb-search"><label class="sr-only" for="search-input">뉴스 검색</label>${searchIcon}<input id="search-input" data-search-input type="search" placeholder="뉴스 검색" autocomplete="off" aria-controls="search-results"><div id="search-results" class="gnb-search-results" data-search-results aria-live="polite"></div></div></div>
+<button class="menu-button" data-menu-button type="button" aria-expanded="false" aria-controls="site-nav"><span class="menu-icon" aria-hidden="true"></span><span class="sr-only">메뉴</span></button>
+</div></header>
+${body}
+<footer class="app-footer"><div class="shell app-footer-inner">
+<div class="app-footer-brand"><strong>${siteTitle}</strong><p>모델·연구·정책·산업의 변화를 한 달 단위로 모아, 맥락과 출처가 있는 브리프로 전합니다.</p></div>
+<nav class="app-footer-nav" aria-label="푸터 바로가기"><a href="${url('/')}">뉴스</a><a href="${url('/events/')}">이벤트</a></nav>
+</div><div class="shell app-footer-meta"><p>© <span data-current-year>2026</span> ${siteTitle}</p><p>출처와 맥락을 확인하는 AI 뉴스 브리프</p></div></footer>
+</body>
+</html>`;
 }
 
 function postPage(post, posts) {
@@ -170,18 +200,34 @@ function homePage(posts) {
     const id = `month-${parts.year}-${parts.month}`;
     if (!months.some((item) => item.id === id)) months.push({ id, label: formatMonth(post.date) });
   }
-  const seenMonths = new Set();
-  const card = (post, featured = false) => {
+  const seenMonths = new Set(featured ? [`${monthParts(featured.date).year}-${monthParts(featured.date).month}`] : []);
+  const recentPosts = rest.map((post) => {
     const parts = monthParts(post.date);
     const key = `${parts.year}-${parts.month}`;
-    const anchor = !seenMonths.has(key);
+    const id = seenMonths.has(key) ? '' : ` id="month-${parts.year}-${parts.month}"`;
     seenMonths.add(key);
-    return newsCard(post, featured, anchor);
-  };
+    const tags = (post.tags ?? []).slice(0, 3).map((tag) => `<span>#${escapeHtml(tag)}</span>`).join('');
+    return `<article class="recent-post"${id}><a class="recent-post-link" href="${url(post.permalink)}"><div class="recent-post-copy"><p class="recent-post-meta"><b>${escapeHtml(post.category)}</b><time datetime="${escapeHtml(post.date.slice(0, 10))}">${formatDate(post.date)}</time><span>${post.reading_time ?? 4}분 읽기</span></p><h3>${escapeHtml(post.title)}</h3><p class="recent-post-description">${escapeHtml(post.description)}</p>${tags ? `<div class="recent-post-tags">${tags}</div>` : ''}</div><span class="recent-post-arrow" aria-hidden="true">↗</span></a></article>`;
+  }).join('');
   const chips = [`<a class="chip is-current" href="${url('/')}">전체 ${posts.length}</a>`, ...months.map((item) => `<a class="chip" href="#${item.id}">${escapeHtml(item.label)}</a>`)].join('');
-  const grid = rest.map((post) => card(post)).join('');
-  const currentMonth = featured ? formatMonth(featured.date) : '이번 달';
-  const body = `<main id="main-content" class="canvas"><div class="shell page-head"><div><p class="eyebrow">월간 브리프</p><h1 id="home-title">AI 뉴스, 매달 한 편으로 정리해 전해드립니다</h1><p>모델부터 정책까지, 한 달의 AI 소식을 모아 담았습니다.</p></div><div class="page-head-actions">${featured ? `<a class="btn" href="${url(featured.permalink)}">${escapeHtml(currentMonth)} 읽기</a>` : ''}<a class="btn btn-ghost" href="${url('/events/')}">이벤트</a></div></div><div class="shell"><div class="chip-row" aria-label="월별 바로가기">${chips}</div>${featured ? `<div class="section-label"><h2>${escapeHtml(currentMonth)}</h2><span>${posts.length}개</span></div>${card(featured, true)}` : '<div class="empty-state"><h1>아직 발행된 브리프가 없습니다.</h1><p>첫 브리프가 올라오면 이곳에 카드로 쌓입니다.</p></div>'}${rest.length ? `<div class="section-label"><h2>이전 브리프</h2><span>${rest.length}</span></div><div class="news-grid">${grid}</div>` : ''}<section class="info-band" aria-label="더 보기"><a class="info-tile" href="${url('/events/')}"><span>이벤트</span><strong>이번 달 AI 행사</strong><p>커뮤니티 밋업과 컨퍼런스 일정을 월별로 모아 두었습니다.</p><em>일정 보기</em></a><a class="info-tile" href="${url('/about/')}"><span>편집</span><strong>사실과 해석을 구분합니다</strong><p>원문과 수치 조건을 함께 남기고, 확인되지 않은 주장은 단정하지 않습니다.</p><em>원칙 보기</em></a></section></div></main>`;
+  const body = `<main id="main-content" class="canvas">
+<div class="shell home-shell">
+<section class="topics" aria-label="월별 브리프">
+<div class="topics-label">${monthIcon}<span>월별 브리프</span></div>
+<nav class="topic-list" aria-label="월별 바로가기">${chips}</nav>
+</section>
+${featured ? featuredCard(featured) : '<div class="empty-state"><h1>아직 발행된 브리프가 없습니다.</h1><p>첫 브리프가 올라오면 이곳에 소개됩니다.</p></div>'}
+<div class="home-lower">
+<section class="recent" id="recent-posts">
+<div class="section-head"><div><h2>이전 브리프</h2><p>지난달의 AI 흐름을 이어서 살펴보세요.</p></div><a href="${url('/categories/')}">전체 아카이브 <span aria-hidden="true">→</span></a></div>
+${recentPosts ? `<div class="recent-list">${recentPosts}</div>` : '<p class="recent-empty">아직 이전 브리프가 없습니다.</p>'}
+</section>
+</div>
+<section class="info-band" aria-label="더 보기">
+<a class="info-tile" href="${url('/events/')}"><span>이벤트</span><strong>이번 달 AI 행사</strong><p>커뮤니티 밋업과 컨퍼런스 일정을 월별로 모아 두었습니다.</p><em>일정 보기</em></a>
+<a class="info-tile" href="${url('/about/')}"><span>편집</span><strong>사실과 해석을 구분합니다</strong><p>원문과 수치 조건을 함께 남기고, 확인되지 않은 주장은 단정하지 않습니다.</p><em>원칙 보기</em></a>
+</section>
+</div></main>`;
   return layout({ title: '월간 AI 뉴스', description: siteDescription, body });
 }
 
