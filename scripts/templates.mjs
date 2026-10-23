@@ -28,13 +28,12 @@ export function createTemplates({ root, url, escapeHtml: e, slugify, formatDate,
     ? `${year(post)}년 ${Number(month(post))}월 AI 브리프`
     : post.title;
   const theme = (post) => ['peach', 'mint', 'blue', 'lemon', 'violet'][Number(month(post)) % 5];
-  // An open lens and a small light: discovering insight through connected news.
-  const brand = `<svg class="brand-symbol" viewBox="0 0 48 48" fill="none" aria-hidden="true"><path d="M38.4 24A14.4 14.4 0 1 1 24 9.6" stroke="currentColor" stroke-width="5.2" stroke-linecap="round"/><path d="M24 16.2C25.2 21 27 22.8 31.8 24C27 25.2 25.2 27 24 31.8C22.8 27 21 25.2 16.2 24C21 22.8 22.8 21 24 16.2Z" fill="currentColor"/><circle cx="34.2" cy="13.8" r="4.6" fill="#58BBA4"/></svg><span class="brand-wordmark"><strong>SCM2<span class="brand-period">.</span></strong><span class="brand-light">AI NEWS & INSIGHT</span></span>`;
+  const brand = `<span class="brand-symbol" aria-hidden="true"><i></i><i></i><i></i></span><span>SCM2<span class="brand-light"> AI NEWS</span></span>`;
 
   function layout({ title, description = siteDescription, body, type = 'website', robots = '' }) {
     return `<!doctype html><html lang="ko" data-theme="light"><head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#ffffff"><meta name="color-scheme" content="light dark"><meta name="site-base" content="${url('').replace(/\/$/, '')}"><meta name="description" content="${e(description)}"><meta property="og:title" content="${e(title)}"><meta property="og:description" content="${e(description)}"><meta property="og:type" content="${type}">${robots ? `<meta name="robots" content="${robots}">` : ''}
-<title>${e(title)} · ${siteTitle}</title><link rel="icon" href="${url('/assets/favicon.svg')}?v=insight-1" type="image/svg+xml">
+<title>${e(title)} · ${siteTitle}</title><link rel="icon" href="${url('/assets/favicon.svg')}?v=thin-gradient-bars-1" type="image/svg+xml">
 <script>try{document.documentElement.dataset.theme=localStorage.getItem('scm-theme')==='dark'?'dark':'light'}catch(e){}</script>
 <link rel="stylesheet" href="${url('/assets/css/m3/tokens.css')}"><link rel="stylesheet" href="${url('/assets/css/styles.css')}"><script src="${url('/assets/js/main.js')}" defer></script></head><body>
 <a class="skip-link" href="#main-content">본문으로 건너뛰기</a>
