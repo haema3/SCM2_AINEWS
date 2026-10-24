@@ -111,7 +111,7 @@ function markdownToHtml(source) {
   flushParagraph(); return output.join('\n');
 }
 
-const { homePage, postPage, archivePage, aboutPage, notFoundPage, eventsPage } = createTemplates({ root, url, escapeHtml, slugify, formatDate, formatMonth, markdownToHtml, siteTitle, siteDescription });
+const { homePage, postPage, archivePage, aboutPage, notFoundPage, eventsPage, subscribePage } = createTemplates({ root, url, absoluteUrl, escapeHtml, slugify, formatDate, formatMonth, markdownToHtml, siteTitle, siteDescription });
 
 async function writeOutput(relativePath, content) {
   const file = path.join(output, relativePath);
@@ -135,12 +135,22 @@ async function main() {
   await writeOutput('tags/index.html', archivePage({ title: '주제 탐색', eyebrow: 'Topics', description: '기업, 모델, 연구와 산업 적용의 교차점을 탐색합니다.', posts, kind: 'tag' }));
   for (const group of tagGroups) await writeOutput(`tags/${slugify(group.name)}/index.html`, archivePage({ title: `#${group.name}`, eyebrow: 'Topic brief', description: `${group.name} 관련 최신 AI 뉴스 브리프입니다.`, posts: group.posts, kind: 'tag' }));
   await writeOutput('about/index.html', aboutPage());
+  await writeOutput('subscribe/index.html', subscribePage(posts));
   await writeOutput('404.html', notFoundPage());
   await writeOutput('events/index.html', await eventsPage());
   await writeOutput('search.json', JSON.stringify(posts.map((post) => ({ title: post.title, description: post.description, date: post.date, category: post.category, tags: post.tags, url: url(post.permalink) }))));
-  const rssItems = posts.map((post) => `<item><title>${escapeHtml(post.title)}</title><link>${absoluteUrl(post.permalink)}</link><description>${escapeHtml(post.description)}</description><pubDate>${new Date(post.date).toUTCString()}</pubDate></item>`).join('');
-  await writeOutput('feed.xml', `<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"><channel><title>${siteTitle}</title><link>${absoluteUrl('/')}</link><description>${siteDescription}</description><language>ko</language>${rssItems}</channel></rss>`);
-  const urls = ['/', ...posts.map((post) => post.permalink), '/about/', '/events/', '/categories/', ...categoryGroups.map((group) => `/categories/${slugify(group.name)}/`), '/tags/', ...tagGroups.map((group) => `/tags/${slugify(group.name)}/`)];
+  const rssItems = posts.map((post) => {
+    const link = escapeHtml(absoluteUrl(post.permalink));
+    // Readers display the body outside the site, so resolve article links and media.
+    const content = markdownToHtml(post.body).replace(/\b(href|src|poster)=(['"])(.*?)\2/gi, (match, attribute, quote, target) => {
+      if (/^(?:[a-z][a-z\d+.-]*:|\/\/)/i.test(target)) return match;
+      const resolved = target.startsWith('/') ? `${siteUrl}${url(target)}` : new URL(target, absoluteUrl(post.permalink)).href;
+      return `${attribute}=${quote}${resolved}${quote}`;
+    });
+    return `<item><title>${escapeHtml(post.title)}</title><link>${link}</link><guid isPermaLink="true">${link}</guid><description>${escapeHtml(post.description)}</description><content:encoded>${escapeHtml(content)}</content:encoded><pubDate>${new Date(post.date).toUTCString()}</pubDate></item>`;
+  }).join('');
+  await writeOutput('feed.xml', `<?xml version="1.0" encoding="UTF-8"?><rss version="2.0" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>${siteTitle}</title><link>${absoluteUrl('/')}</link><atom:link href="${absoluteUrl('/feed.xml')}" rel="self" type="application/rss+xml"/><description>${siteDescription}</description><language>ko</language>${rssItems}</channel></rss>`);
+  const urls = ['/', ...posts.map((post) => post.permalink), '/about/', '/subscribe/', '/events/', '/categories/', ...categoryGroups.map((group) => `/categories/${slugify(group.name)}/`), '/tags/', ...tagGroups.map((group) => `/tags/${slugify(group.name)}/`)];
   await writeOutput('sitemap.xml', `<?xml version="1.0" encoding="UTF-8"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">${urls.map((entry) => `<url><loc>${absoluteUrl(entry)}</loc></url>`).join('')}</urlset>`);
   console.log(`Built ${posts.length} Markdown posts to ${path.relative(root, output)}${basePath ? ` (base path: ${basePath})` : ''}.`);
 }

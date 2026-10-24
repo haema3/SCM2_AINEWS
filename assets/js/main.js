@@ -40,7 +40,8 @@
   });
   window.matchMedia('(min-width:561px)').addEventListener('change', closeMenu);
   const path = window.location.pathname.slice(base.length);
-  const section = path.startsWith('/categories') ? 'archive' : path.startsWith('/tags') ? 'topics' : path.startsWith('/events') ? 'events' : path.startsWith('/about') ? 'about' : 'news';
+  const section = path.startsWith('/subscribe') ? 'rss' : path.startsWith('/categories') ? 'archive' : path.startsWith('/tags') ? 'topics' : path.startsWith('/events') ? 'events' : path.startsWith('/about') ? 'about' : 'news';
+  if (section === 'rss') document.querySelector('.nav-rss')?.setAttribute('aria-current', 'page');
   document.querySelectorAll('[data-nav]').forEach(link => {
     if (link.dataset.nav === section) link.setAttribute('aria-current', 'page');
   });
@@ -221,6 +222,21 @@
     try { await navigator.clipboard.writeText(location.href); toast('브리프 링크를 복사했어요.'); }
     catch { window.prompt('이 주소를 복사해 주세요.', location.href); }
   }));
+  const feedInput = document.querySelector('[data-feed-url]');
+  if (feedInput) {
+    feedInput.value = new URL(feedInput.dataset.feedUrl, location.origin).href;
+    document.querySelector('[data-copy-feed]')?.addEventListener('click', async () => {
+      const status = document.querySelector('[data-feed-status]');
+      try {
+        await navigator.clipboard.writeText(feedInput.value);
+        status.textContent = '복사했어요. RSS 리더의 구독 추가 메뉴에 붙여 넣어 주세요.';
+      } catch {
+        feedInput.focus();
+        feedInput.select();
+        status.textContent = '주소를 선택했어요. 길게 누르거나 Ctrl+C (Mac: ⌘C)로 복사해 주세요.';
+      }
+    });
+  }
   const tocLinks = [...document.querySelectorAll('.toc ol a')];
   if (tocLinks.length && 'IntersectionObserver' in window) {
     const observer = new IntersectionObserver(entries => {
