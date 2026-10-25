@@ -1,6 +1,65 @@
 # AI 관련 행사 정보
 
 > AI/데이터/개발 커뮤니티 행사를 한눈에 볼 수 있도록 정리했습니다.
+## 26년 11월
+
+#### [월간 AX: 10월](https://event-us.kr/FKH3nHkjmPGh/event/137338)
+  - **주최**: 한빛앤(한빛미디어·한빛+)
+  - **일시**: 11/03(화) 13:30 ~ 16:30
+  - **분류**: `오프라인(서울)`
+
+#### [Ollama x FriendliAI Seoul Meetup](https://event-us.kr/friendliai/event/137581)
+  - **주최**: 프렌들리에이아이(FriendliAI)
+  - **일시**: 11/05(목) 18:00 ~ 21:00
+  - **분류**: `오프라인(서울)`
+
+#### [2026 Edge AI Day](https://event-us.kr/advantechkr/event/137034)
+  - **주최**: 어드밴텍
+  - **일시**: 11/06(금) 10:00 ~ 16:30
+  - **분류**: `오프라인(서울)`
+
+#### [DEVS 커뮤니티 1st 밋업](https://ticketa.co/event/96cdhqje)
+  - **주최**: DEVS
+  - **일시**: 11/06(금) 19:00 ~ 21:30
+  - **분류**: `오프라인(서울)`
+
+#### [Techive 여덟번째 발표: AI 에이전트를 이해하고 부리고 다스리기](https://event-us.kr/techive/event/137241)
+  - **주최**: Techive
+  - **일시**: 11/07(토) 13:00 ~ 17:30
+  - **분류**: `오프라인(광주)`
+
+#### [NVIDIA AI Day Seoul 2026](https://www.nvidia.com/ko-kr/ai-days/)
+  - **주최**: NVIDIA
+  - **일시**: 11/09(월) ~ 11/10(화)
+  - **분류**: `오프라인(서울)`
+  - **안내**: 10/25 확인 기준 본 행사 등록이 마감됐습니다. 스페셜 이벤트별 참가 안내는 주최 측 페이지를 확인해 주세요.
+
+#### [Intel AI Summit Seoul 2026](https://event-us.kr/intelseminar/event/131490)
+  - **주최**: Intel
+  - **일시**: 11/12(목) 09:00 ~ 17:00
+  - **분류**: `오프라인(서울)`
+
+#### [NASA Space Apps Challenge 2026 Seoul](https://www.spaceappschallenge.org/2026/local-events/seoul/)
+  - **주최**: NASA Space Apps Seoul 운영팀
+  - **일시**: 11/14(토) ~ 11/15(일)
+  - **분류**: `온라인`
+  - **안내**: 10/18부터 신규 신청은 대기 등록만 가능합니다. 온라인 중심으로 운영하며 일부 오프라인 참여 기회가 있습니다.
+
+#### [올리브영 컨퍼런스 define:OMNI](https://oliveyoung.tech/conf/2026/)
+  - **주최**: 올리브영
+  - **일시**: 11/19(목) 10:00 시작
+  - **분류**: `오프라인(서울)`
+
+#### [SHOWCASE26](https://developeracademy.postech.ac.kr/showcase26)
+  - **주최**: Apple Developer Academy @ POSTECH
+  - **일시**: 11/20(금) 13:30 ~ 17:30
+  - **분류**: `오프라인(포항)`
+
+#### [OWASP Korea Day](https://event-us.kr/owasp/event/133675)
+  - **주최**: OWASP Seoul
+  - **일시**: 11/28(토) 10:00 ~ 18:00
+  - **분류**: `오프라인(서울)`
+
 ## 26년 10월
 
 #### [2026 KoMaP AI 경진대회](https://komap.ai/front/competition2026)
